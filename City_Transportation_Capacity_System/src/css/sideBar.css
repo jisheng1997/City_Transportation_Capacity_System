@@ -1,0 +1,17 @@
+
+#sidebar{
+	-fx-background-color:#00FFFF;
+}
+#sidebar .button{
+	-fx-background-color:#00FFFF;
+	-fx-text-fill: black;
+	-fx-alignment: center;
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #8A8A8A;
+	-fx-border-radius:2%;
+	
+}
+
+#sidebar .button:hover{
+	-fx-background-color: #A0A0A0;
+}

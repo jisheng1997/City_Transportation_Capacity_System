@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="showRoadView.ShowRoadViewController">
+   <children>
+      <ImageView fitHeight="140.0" fitWidth="745.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/banner.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="title" layoutX="74.0" layoutY="33.0" prefHeight="75.0" prefWidth="598.0" text="城市路网交通基础设施供给能力展示系统" textAlignment="CENTER">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
+         <children>
+            <Button fx:id="searchViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路查询">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="advSearchViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
+         <children>
+            <VBox layoutX="162.0" layoutY="14.0" prefHeight="358.0" prefWidth="409.0">
+               <children>
+                  <HBox prefHeight="22.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="道路名称：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="rnText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="道路机动车道数：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="rlText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="道路类型：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="rbText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="18.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="道路设计时速：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="rsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="是否拥有左转车道：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="riText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="11.0" prefWidth="351.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="160.0" text="道路通行能力：">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Label>
+                        <Text fx:id="rtText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></Pane>
+   </children>
+</Pane>

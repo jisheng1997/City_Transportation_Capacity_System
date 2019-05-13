@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="searchRoadView.SearchRoadViewController">
+   <children>
+      <ImageView fitHeight="140.0" fitWidth="745.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/banner.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="title" layoutX="74.0" layoutY="33.0" prefHeight="75.0" prefWidth="598.0" text="城市路网交通基础设施供给能力展示系统" textAlignment="CENTER">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
+         <children>
+            <Button fx:id="searchViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路查询">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="advSearchBtn" mnemonicParsing="false" onMouseClicked="#handleAdvSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="高级查询">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="退出">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
+         <children>
+            <TextField fx:id="searchTF" layoutX="117.0" layoutY="102.0" prefHeight="36.0" prefWidth="372.0" />
+            <Button fx:id="searchBtn" layoutX="166.0" layoutY="166.0" mnemonicParsing="false" onAction="#handleSearchResult" text="搜索" />
+            <Button fx:id="advSearchBtn" layoutX="291.0" layoutY="166.0" mnemonicParsing="false" text="高级搜索" />
+         </children></Pane>
+   </children>
+</Pane>

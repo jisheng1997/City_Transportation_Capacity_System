@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resultView.ResultViewController">
+   <children>
+      <ImageView fitHeight="140.0" fitWidth="745.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/banner.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="title" layoutX="74.0" layoutY="33.0" prefHeight="75.0" prefWidth="598.0" text="城市路网交通基础设施供给能力展示系统" textAlignment="CENTER" textFill="#1803ff">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
+         <children>
+            <Button fx:id="searchViewBtn" mnemonicParsing="false" onAction="#handleSearchRoadViewBtn" onMouseClicked="#handleSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="道路查询">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="advSearchViewBtn" mnemonicParsing="false" onAction="#handleAdvSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="高级查询">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="区域分析">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="退出">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <ScrollPane fx:id="scrollPane" layoutX="198.0" layoutY="165.0" prefHeight="302.0" prefWidth="539.0">
+         <content>
+            <VBox fx:id="listVBox" prefHeight="307.0" prefWidth="542.0">
+               <children>
+                  <HBox fx:id="item" prefHeight="44.0" prefWidth="532.0" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
