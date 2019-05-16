@@ -130,7 +130,7 @@ public class RegisterViewController implements Initializable {
 		System.out.println(isRegisterPasswdValid);
 		if (!isExist) {
 			if (isRegisterNameValid && isPasswordPaired && isRegisterPasswdValid) {
-				User newUser = new User(username, passwd);
+				User newUser = new User(username, passwd,false);
 				dbProcessor.insertUser(newUser);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setContentText("×¢²á³É¹¦£¡");

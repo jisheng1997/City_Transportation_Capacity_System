@@ -4,8 +4,9 @@ public class User {
 	private int user_id;
 	private String username;
 	private String password;
+	boolean isAdmin;
 
-	public User(String username,String password) {
+	public User(String username,String password, boolean isAdmin) {
 		this.username = username;
 		this.password = password;
 	}
@@ -24,6 +25,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public String getPassword() {

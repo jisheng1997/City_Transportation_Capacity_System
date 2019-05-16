@@ -28,7 +28,7 @@ public class DBProcessor {
 			Statement statement = connection.createStatement();
 			ResultSet rSet = statement.executeQuery(sql);
 			while (rSet.next()) {
-				User userInDB = new User(rSet.getString(2), rSet.getString(3));
+				User userInDB = new User(rSet.getString(2), rSet.getString(3),rSet.getBoolean(4));
 				userInDB.setUser_id(rSet.getInt(1));
 				userlist.add(userInDB);
 			}
