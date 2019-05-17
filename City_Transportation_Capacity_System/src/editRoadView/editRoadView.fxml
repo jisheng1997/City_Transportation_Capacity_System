@@ -163,6 +163,7 @@
                         </Label>
                      </children>
                   </HBox>
+                  <Button fx:id="confirmBtn" mnemonicParsing="false" text="确认" />
                </children>
             </VBox>
          </children></Pane>

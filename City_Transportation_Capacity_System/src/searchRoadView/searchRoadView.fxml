@@ -34,7 +34,7 @@
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路分析">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -51,9 +51,8 @@
       </VBox>
       <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
          <children>
-            <TextField fx:id="searchTF" layoutX="117.0" layoutY="102.0" prefHeight="36.0" prefWidth="372.0" />
-            <Button fx:id="searchBtn" layoutX="166.0" layoutY="166.0" mnemonicParsing="false" onAction="#handleSearchResult" text="搜索" />
-            <Button fx:id="advSearchBtn" layoutX="291.0" layoutY="166.0" mnemonicParsing="false" text="高级搜索" />
+            <TextField fx:id="searchTF" layoutX="61.0" layoutY="148.0" prefHeight="36.0" prefWidth="372.0" />
+            <Button fx:id="searchBtn" layoutX="460.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleSearchResult" text="搜索" />
          </children></Pane>
    </children>
 </Pane>

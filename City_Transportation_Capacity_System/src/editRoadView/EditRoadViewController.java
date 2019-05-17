@@ -1,13 +1,18 @@
 package editRoadView;
 
-import java.awt.TextField;
+
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-public class EditRoadViewController {
+public class EditRoadViewController implements Initializable{
 	
 	@FXML
 	private Label title;
@@ -32,6 +37,8 @@ public class EditRoadViewController {
 	@FXML
 	private TextField roadleftTF;
 	@FXML
+	private TextField roadcapacityTF;
+	@FXML
 	private Label oldrn;
 	@FXML
 	private Label oldrln;
@@ -41,7 +48,11 @@ public class EditRoadViewController {
 	private Label oldrs;
 	@FXML
 	private Label oldrc;
+	@FXML
+	private Label oldrl;
 	
-	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+	}
 	
 }

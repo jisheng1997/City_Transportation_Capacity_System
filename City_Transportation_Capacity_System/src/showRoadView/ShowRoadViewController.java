@@ -1,33 +1,37 @@
 package showRoadView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.GetInfo;
 import main.Road;
+import resultView.ResultViewController;
 
 public class ShowRoadViewController implements Initializable{
 	
 	@FXML
 	private Label title;
 	@FXML
-	private Button searchViewBtn;
+	private Button lastViewBtn;
 	@FXML
-	private Button advSearchViewBtn;
+	private Button editRoadBtn;
 	@FXML
-	private Button btn2;
+	private Button deleteRoadBtn;
 	@FXML
-	private Button exitBtn;
+	private Button addRoadBtn;
 	@FXML
 	private VBox sidebar;
 	@FXML
@@ -56,17 +60,23 @@ public class ShowRoadViewController implements Initializable{
 		rbText.setText(""+road.getRoad_capacity()+"");
 	}
 	
+	public void lastView(MouseEvent event) {
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		fxmlLoader.setLocation(getClass().getResource("../resultView/resultView.fxml"));
+		try {
+			ResultViewController controller = fxmlLoader.getController();
+			controller.initalizeResult(GetInfo.getResults());
+			Parent parent = fxmlLoader.load();
+			Scene scene = new Scene(parent);
+			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			currentStage.setScene(scene);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		exitBtn.setOnMouseClicked(e -> {
-			Alert alert = new Alert(AlertType.WARNING);
-			alert.setContentText("你想要退出程序吗?");
-			alert.showAndWait().ifPresent(response -> {
-				if (response == ButtonType.OK) {
-					Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-					currentStage.close();
-				}
-			});
-		});
+		
 	}
 }

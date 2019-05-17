@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +27,6 @@ import javafx.scene.input.MouseEvent;
 
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.DBProcessor;
 import main.GetInfo;
 import main.Road;
 import showRoadView.ShowRoadViewController;
@@ -90,7 +88,7 @@ public class ResultViewController implements Initializable {
 		}
 	}
 	
-	public void intializeResult(ArrayList<Road> results) {
+	public void initalizeResult(ArrayList<Road> results) {
 		this.results = results;
 		itemAcesses = new HashMap<>();
 		
@@ -127,7 +125,7 @@ public class ResultViewController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		GetInfo.setResults(results);
 		exitBtn.setOnMouseClicked(e -> {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setContentText("你想要退出程序吗?");

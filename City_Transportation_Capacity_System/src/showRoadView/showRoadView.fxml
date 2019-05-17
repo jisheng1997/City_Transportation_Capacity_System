@@ -23,22 +23,22 @@
       </Label>
       <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
          <children>
-            <Button fx:id="searchViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路查询">
+            <Button fx:id="lastViewBtn" mnemonicParsing="false" onMouseClicked="#lastView" prefHeight="50.0" prefWidth="130.0" text="返回上一页">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="advSearchViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+            <Button fx:id="editRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="修改道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+            <Button fx:id="deleteRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="删除道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Button">
+            <Button fx:id="addRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="新建道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -50,15 +50,18 @@
       </VBox>
       <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
          <children>
-            <VBox layoutX="162.0" layoutY="14.0" prefHeight="358.0" prefWidth="409.0">
+            <VBox layoutX="111.0" layoutY="14.0" prefHeight="358.0" prefWidth="460.0">
                <children>
                   <HBox prefHeight="22.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="道路名称：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路名称：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="rnText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="rnText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -66,47 +69,62 @@
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="道路机动车道数：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路机动车道数：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="rlText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="rlText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                   </HBox>
                   <HBox prefHeight="26.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="道路类型：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路类型：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="rbText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="rbText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                   </HBox>
                   <HBox prefHeight="18.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="道路设计时速：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路设计时速：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="rsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="rsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="是否拥有左转车道：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="是否拥有左转车道：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="riText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="riText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                   </HBox>
                   <HBox prefHeight="11.0" prefWidth="351.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="160.0" text="道路通行能力：">
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路通行能力：">
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <Text fx:id="rtText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0" />
+                        <Text fx:id="rtText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
+                           <HBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </HBox.margin></Text>
                      </children>
                   </HBox>
                </children>

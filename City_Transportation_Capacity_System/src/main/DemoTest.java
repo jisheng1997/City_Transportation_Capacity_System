@@ -19,7 +19,7 @@ public class DemoTest extends Application{
 	 */
 	public static void main(String[] args) {
 		
-
+		GetInfo getInfo = new GetInfo();
 		launch(args);
 	}
 

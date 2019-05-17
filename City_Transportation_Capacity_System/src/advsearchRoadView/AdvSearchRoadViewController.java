@@ -94,7 +94,7 @@ public class AdvSearchRoadViewController implements Initializable{
 			try {
 				Parent parent = fxmlLoader.load();
 				ResultViewController controller = fxmlLoader.getController();
-				controller.intializeResult(results);
+				controller.initalizeResult(results);
 				Scene scene = new Scene(parent);
 				Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				currentStage.setScene(scene);
