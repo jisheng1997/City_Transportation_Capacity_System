@@ -23,7 +23,12 @@
       </Label>
       <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
          <children>
-            <Button fx:id="addRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路增加">
+            <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#lastView" prefHeight="50.0" prefWidth="130.0" text="返回上一页">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="addRoadViewBtn" mnemonicParsing="false" onAction="#handleAddRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="道路增加">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -33,12 +38,7 @@
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="deleteRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路删除">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="退出">
+            <Button fx:id="deleteRoadViewBtn" mnemonicParsing="false" onAction="#handleDeleteRoadBtn" prefHeight="50.0" prefWidth="130.0" text="道路删除">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -58,11 +58,6 @@
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <TextField fx:id="roadnameTF" prefWidth="150.0">
-                           <HBox.margin>
-                              <Insets top="10.0" />
-                           </HBox.margin>
-                        </TextField>
                         <Label fx:id="oldrn" prefHeight="9.0" prefWidth="170.0" text="oldrn">
                            <HBox.margin>
                               <Insets bottom="15.0" left="15.0" top="15.0" />
@@ -84,11 +79,6 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </TextField>
-                        <Label fx:id="oldrln" prefHeight="9.0" prefWidth="170.0" text="oldrln">
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="15.0" top="15.0" />
-                           </HBox.margin>
-                        </Label>
                      </children>
                   </HBox>
                   <HBox prefHeight="26.0" prefWidth="351.0">
@@ -97,16 +87,11 @@
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <TextField fx:id="roadtypeTF" prefWidth="150.0">
+                        <ChoiceBox fx:id="roadtypeCB" prefWidth="150.0">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
-                        </TextField>
-                        <Label fx:id="oldrt" prefHeight="9.0" prefWidth="170.0" text="oldrt">
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="15.0" top="15.0" />
-                           </HBox.margin>
-                        </Label>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="18.0" prefWidth="351.0">
@@ -120,11 +105,6 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </TextField>
-                        <Label fx:id="oldrs" prefHeight="9.0" prefWidth="170.0" text="oldrs">
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="15.0" top="15.0" />
-                           </HBox.margin>
-                        </Label>
                      </children>
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="351.0">
@@ -133,16 +113,11 @@
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <TextField fx:id="roadleftTF" prefWidth="150.0">
+                        <ChoiceBox fx:id="roadleftCB" prefWidth="150.0">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
-                        </TextField>
-                        <Label fx:id="oldrl" prefHeight="9.0" prefWidth="170.0" text="oldrl">
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="15.0" top="15.0" />
-                           </HBox.margin>
-                        </Label>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="11.0" prefWidth="351.0">
@@ -156,14 +131,13 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </TextField>
-                        <Label fx:id="oldrc" prefHeight="9.0" prefWidth="170.0" text="oldrc">
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="15.0" top="15.0" />
-                           </HBox.margin>
-                        </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="confirmBtn" mnemonicParsing="false" text="确认" />
+                  <Button fx:id="confirmBtn" mnemonicParsing="false" onAction="#handleEditRoadBtn" text="确认修改">
+                     <VBox.margin>
+                        <Insets left="400.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </children></Pane>

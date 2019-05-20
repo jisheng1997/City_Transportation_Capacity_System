@@ -80,6 +80,7 @@ public class SearchRoadViewController implements Initializable {
 				Parent parent = fxmlLoader.load();
 				ResultViewController controller = fxmlLoader.getController();
 				controller.initalizeResult(results);
+				GetInfo.setResults(results);
 				Scene scene = new Scene(parent);
 				Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				currentStage.setScene(scene);

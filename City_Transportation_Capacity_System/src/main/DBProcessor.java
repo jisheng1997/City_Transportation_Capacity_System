@@ -184,7 +184,7 @@ public class DBProcessor {
 		}
 	}
 	
-	public void addRoad(String roadname,String roadlaneNumber,String roadspeed,String isleft,String roadcapacity) {
+	public void addRoad(String roadname,String roadlaneNumber,String roadtype,String roadspeed,String isleft,String roadcapacity) {
 		Connection connection = DBUtil.getConnection();
 		
 		// At first, find the maximum id of current db
@@ -210,7 +210,8 @@ public class DBProcessor {
 			pStatement.setInt(1, maxID + 1);
 			pStatement.setString(2,roadname);
 			pStatement.setString(3, roadlaneNumber);
-			pStatement.setString(4, roadspeed);
+			pStatement.setString(4, roadtype);
+			pStatement.setString(5, roadspeed);
 			if (isleft == "ÊÇ") {
 				pStatement.setBoolean(6, true);
 			}else {
@@ -222,5 +223,28 @@ public class DBProcessor {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void editRoad(String roadname,String roadlaneNumber,String roadtype,String roadspeed,String isleft,String roadcapacity) {
+		Connection connection = DBUtil.getConnection();
+		
+		String sql = "update road_details set road_laneNumber = ?, road_type = ?,"
+				+ "road_speed = ?, road_if_have_Left_turning_lane = ?,"
+				+ "road_basic_transportation_capacity = ? where road_name = ?;";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			pStatement.setString(1, roadlaneNumber);
+			pStatement.setString(2, roadtype);
+			pStatement.setString(3, roadspeed);
+			if (isleft == "ÊÇ") {
+				pStatement.setBoolean(4, true);
+			}else {
+				pStatement.setBoolean(4, false);
+			}
+			pStatement.setString(5, roadcapacity);
+			pStatement.setString(6, roadname);
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

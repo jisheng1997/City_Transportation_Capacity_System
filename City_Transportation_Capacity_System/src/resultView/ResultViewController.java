@@ -126,7 +126,6 @@ public class ResultViewController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		GetInfo.setResults(results);
 		exitBtn.setOnMouseClicked(e -> {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setContentText("你想要退出程序吗?");
