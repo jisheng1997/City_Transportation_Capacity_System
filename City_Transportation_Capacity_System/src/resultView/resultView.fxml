@@ -23,12 +23,12 @@
       </Label>
       <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
          <children>
-            <Button fx:id="searchViewBtn" mnemonicParsing="false" onAction="#handleSearchRoadViewBtn" onMouseClicked="#handleSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="道路查询">
+            <Button fx:id="searchViewBtn" mnemonicParsing="false" onMouseClicked="#handleSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="道路查询">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="advSearchViewBtn" mnemonicParsing="false" onAction="#handleAdvSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="高级查询">
+            <Button fx:id="advSearchViewBtn" mnemonicParsing="false" onMouseClicked="#handleAdvSearchRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="高级查询">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>

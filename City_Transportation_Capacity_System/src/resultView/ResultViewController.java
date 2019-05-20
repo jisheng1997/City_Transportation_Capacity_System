@@ -114,6 +114,7 @@ public class ResultViewController implements Initializable {
 					Scene scene = new Scene(fxmlLoader.load());
 					ShowRoadViewController controller = fxmlLoader.getController();
 					controller.setRoadDetail(GetInfo.getCurrentRoad());
+					controller.initializeResults(results);
 					Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 					currentStage.setScene(scene);
 				} catch (IOException e1) {

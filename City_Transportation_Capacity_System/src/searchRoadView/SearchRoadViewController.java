@@ -24,6 +24,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.DBProcessor;
+import main.GetInfo;
 import main.Road;
 import resultView.ResultViewController;
 
@@ -71,6 +72,7 @@ public class SearchRoadViewController implements Initializable {
 		ArrayList<Road> results = new ArrayList<>();
 		String content = this.searchTF.getText();
 		results = searchRoadByName(content);
+		GetInfo.setResults(results);
 		if (!results.isEmpty()) {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(getClass().getResource("../resultView/resultView.fxml"));

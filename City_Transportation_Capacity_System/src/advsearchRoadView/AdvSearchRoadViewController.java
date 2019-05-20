@@ -121,7 +121,7 @@ public class AdvSearchRoadViewController implements Initializable{
 		allRoads = dbProcessor.fetchRoad();
 		road_laneNumberCB.setItems(FXCollections.observableArrayList("任意","2","3","4"));
 		road_laneNumberCB.getSelectionModel().select(0);
-		road_typeCB.setItems(FXCollections.observableArrayList("任意","主干路","快速路",""));
+		road_typeCB.setItems(FXCollections.observableArrayList("任意","主干路","快速路","次干路","支路"));
 		road_typeCB.getSelectionModel().select(0);
 		leftCB.setItems(FXCollections.observableArrayList("任意","是","否"));
 		leftCB.getSelectionModel().select(0);

@@ -25,6 +25,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.DBProcessor;
+import main.GetInfo;
 import main.Road;
 import main.User;
 
@@ -67,6 +68,7 @@ public class LoginViewController implements Initializable{
 			// Initialize current user
 			if (user.getUsername().equals(username) && user.getPassword().equals(passwd)) {
 				System.out.println(user.getUsername());
+				GetInfo.setCurrentUser(user);
 				FXMLLoader fxmlLoader = new FXMLLoader();
 				fxmlLoader.setLocation(getClass().getResource("../searchRoadView/searchRoadView.fxml"));
 				try {

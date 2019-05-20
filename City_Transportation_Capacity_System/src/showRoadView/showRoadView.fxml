@@ -28,17 +28,17 @@
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="editRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="修改道路">
+            <Button fx:id="editRoadBtn" mnemonicParsing="false" onMouseClicked="#handleEditRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="修改道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="deleteRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="删除道路">
+            <Button fx:id="deleteRoadBtn" mnemonicParsing="false" onAction="#handleDeleteRoadBtn" prefHeight="50.0" prefWidth="130.0" text="删除道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="addRoadBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="新建道路">
+            <Button fx:id="addRoadBtn" mnemonicParsing="false" onMouseClicked="#handleAddRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="新建道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>

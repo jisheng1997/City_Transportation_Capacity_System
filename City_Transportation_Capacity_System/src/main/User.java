@@ -9,6 +9,7 @@ public class User {
 	public User(String username,String password, boolean isAdmin) {
 		this.username = username;
 		this.password = password;
+		this.isAdmin = isAdmin;
 	}
 
 	public int getUser_id() {

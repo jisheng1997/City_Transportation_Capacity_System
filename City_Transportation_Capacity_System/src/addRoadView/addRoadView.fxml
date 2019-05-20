@@ -23,22 +23,22 @@
       </Label>
       <VBox fx:id="sidebar" layoutY="140.0" prefHeight="376.0" prefWidth="169.0" stylesheets="@../css/sideBar.css">
          <children>
-            <Button fx:id="addRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路增加">
+            <Button fx:id="addRoadViewBtn" mnemonicParsing="false" onMouseClicked="#lastView" prefHeight="50.0" prefWidth="130.0" text="返回上一页">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="editRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路修改">
+            <Button fx:id="editRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="修改道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="deleteRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路删除">
+            <Button fx:id="deleteRoadViewBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="删除道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="退出">
+            <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="新建道路">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -87,11 +87,11 @@
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <TextField fx:id="roadtypeTF" prefWidth="150.0">
+                        <ChoiceBox fx:id="roadtypeCB" prefWidth="150.0">
                            <HBox.margin>
-                              <Insets top="10.0" />
+                              <Insets bottom="15.0" top="15.0" />
                            </HBox.margin>
-                        </TextField>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="18.0" prefWidth="351.0">
@@ -113,11 +113,11 @@
                            <HBox.margin>
                               <Insets bottom="15.0" top="15.0" />
                            </HBox.margin></Label>
-                        <TextField fx:id="roadleftTF" prefWidth="150.0">
+                        <ChoiceBox fx:id="roadleftCB" prefWidth="150.0">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
-                        </TextField>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="11.0" prefWidth="351.0">
@@ -131,6 +131,11 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </TextField>
+                        <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handleAddRoadBtn" text="添加道路">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="30.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
                </children>

@@ -171,5 +171,56 @@ public class DBProcessor {
 		}
 		return roadList;
 	}
+	
+	public void deleteRoad(int roadId) {
+		Connection connection = DBUtil.getConnection();
+		String sql = "delete from road_details where road_id=?;";
+		try {
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setInt(1, roadId);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void addRoad(String roadname,String roadlaneNumber,String roadspeed,String isleft,String roadcapacity) {
+		Connection connection = DBUtil.getConnection();
+		
+		// At first, find the maximum id of current db
+		String idSql = "select max(road_id) from road_details;";
+		Statement statement = null;
+		int maxID = 0;
+		try {
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(idSql);
+			if (resultSet.next())
+				maxID = resultSet.getInt(1);
+			else
+				maxID = 0;
+
+			resultSet.close();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		String sql = "insert into road_details(road_id,road_name,road_laneNumber,road_type,road_speed,road_if_have_Left_turning_lane,road_basic_transportation_capacity) values(?,?,?,?,?,?,?);";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			pStatement.setInt(1, maxID + 1);
+			pStatement.setString(2,roadname);
+			pStatement.setString(3, roadlaneNumber);
+			pStatement.setString(4, roadspeed);
+			if (isleft == "ÊÇ") {
+				pStatement.setBoolean(6, true);
+			}else {
+				pStatement.setBoolean(6, false);
+			}
+			pStatement.setString(7, roadcapacity);
+			pStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
