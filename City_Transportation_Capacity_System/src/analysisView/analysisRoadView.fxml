@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="searchRoadView.SearchRoadViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="analysisView.AnalysisRoadViewController">
    <children>
       <ImageView fitHeight="140.0" fitWidth="745.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,7 +34,7 @@
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btn2" mnemonicParsing="false" onMouseClicked="#handleAnalysisRoadViewBtn" prefHeight="50.0" prefWidth="130.0" text="道路分析">
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="道路分析">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
@@ -51,8 +51,19 @@
       </VBox>
       <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
          <children>
-            <TextField fx:id="searchTF" layoutX="61.0" layoutY="148.0" prefHeight="36.0" prefWidth="372.0" />
-            <Button fx:id="searchBtn" layoutX="460.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleSearchResult" text="搜索" />
+            <ScrollPane fx:id="scrollpane" layoutX="14.0" layoutY="14.0" prefHeight="361.0" prefWidth="560.0">
+               <content>
+                  <VBox fx:id="rootVBox" prefHeight="0.0" prefWidth="559.0">
+                     <children>
+                        <VBox fx:id="roadVBox" prefHeight="37.0" prefWidth="559.0">
+                           <children>
+                              <HBox fx:id="item" prefHeight="38.0" prefWidth="559.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </children></Pane>
    </children>
 </Pane>

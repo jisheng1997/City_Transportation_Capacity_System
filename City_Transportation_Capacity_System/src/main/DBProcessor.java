@@ -172,6 +172,25 @@ public class DBProcessor {
 		return roadList;
 	}
 	
+	public HashMap<Integer, Region> fetchRegion() {
+		Connection connection = DBUtil.getConnection();
+		String sql1 = "select*from region;";
+		HashMap<Integer, Region> regionList = new HashMap<>();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rSet = statement.executeQuery(sql1);
+			while (rSet.next()) {
+				Region region = new Region(rSet.getInt(1),rSet.getString(2),rSet.getString(3));
+				regionList.put(region.getRegion_id(),region);
+			}
+			rSet.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return regionList;
+	}
+	
+	
 	public void deleteRoad(int roadId) {
 		Connection connection = DBUtil.getConnection();
 		String sql = "delete from road_details where road_id=?;";
@@ -229,7 +248,7 @@ public class DBProcessor {
 		
 		String sql = "update road_details set road_laneNumber = ?, road_type = ?,"
 				+ "road_speed = ?, road_if_have_Left_turning_lane = ?,"
-				+ "road_basic_transportation_capacity = ? where road_name = ?;";
+				+ "road_basic_transportation_capacity = ? " + " where road_name = ?;";
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			pStatement.setString(1, roadlaneNumber);

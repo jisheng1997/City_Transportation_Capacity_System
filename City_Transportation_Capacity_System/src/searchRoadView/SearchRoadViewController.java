@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.control.Alert.AlertType;
 
 import java.io.IOException;
@@ -18,9 +20,11 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import analysisView.AnalysisRoadViewController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.DBProcessor;
@@ -65,10 +69,23 @@ public class SearchRoadViewController implements Initializable {
 		}
 	}
 	
+	public void handleAnalysisRoadViewBtn(MouseEvent event) {
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		fxmlLoader.setLocation(getClass().getResource("../analysisView/analysisRoadView.fxml"));
+		try {
+			Parent parent = fxmlLoader.load();
+			Scene scene = new Scene(parent);
+			
+			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			currentStage.setScene(scene);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	// Event Listener on Button[#searchBtn].onAction
 	@FXML
 	public void handleSearchResult(ActionEvent event) {
-		
 		ArrayList<Road> results = new ArrayList<>();
 		String content = this.searchTF.getText();
 		results = searchRoadByName(content);
@@ -102,6 +119,17 @@ public class SearchRoadViewController implements Initializable {
 		return results;
 	}
 	
+	public TreeView<String> getTreeView() {
+		TreeItem<String> rootItem = new TreeItem<>("滨江雅苑");
+		rootItem.setExpanded(true);
+		TreeItem<String> item = new TreeItem<String>();
+		item.setValue("大华三路");
+		rootItem.getChildren().add(item);
+		item.setValue("大华二路");
+		rootItem.getChildren().add(item);
+		TreeView<String> ItemTV = new TreeView<>(rootItem);
+		return ItemTV;
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		allRoads = dbProcessor.fetchRoad();
