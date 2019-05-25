@@ -50,85 +50,51 @@
       </VBox>
       <Pane layoutX="165.0" layoutY="135.0" prefHeight="382.0" prefWidth="581.0">
          <children>
-            <VBox layoutX="111.0" layoutY="14.0" prefHeight="358.0" prefWidth="460.0">
+            <VBox layoutX="14.0" layoutY="19.0" prefHeight="350.0" prefWidth="150.0">
                <children>
-                  <HBox prefHeight="22.0" prefWidth="351.0">
+                  <VBox prefHeight="100.0" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="道路名称：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="rnText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
+                        <Label prefHeight="30.0" prefWidth="91.0" text="道路名称：" />
+                        <Text fx:id="rnText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0" />
                      </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="0.0" prefWidth="351.0">
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="道路机动车道数：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="rlText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
+                        <Label prefHeight="34.0" prefWidth="155.0" text="道路机动车道数：" />
+                        <Text fx:id="rlText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="26.0" prefWidth="351.0">
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="道路类型：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="rbText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
+                        <Label prefHeight="34.0" prefWidth="123.0" text="道路类型：" />
+                        <Text fx:id="rtText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="18.0" prefWidth="351.0">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="道路设计时速：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="rsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="0.0" prefWidth="351.0">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="是否拥有左转车道：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="riText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="11.0" prefWidth="351.0">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="180.0" text="道路通行能力：">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Label>
-                        <Text fx:id="rtText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.0">
-                           <HBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </HBox.margin></Text>
-                     </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
+            <VBox layoutX="387.0" layoutY="14.0" prefHeight="350.0" prefWidth="150.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路通行能力：" />
+                        <Text fx:id="rbText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="180.0" text="是否拥有左转车道：" />
+                        <Text fx:id="riText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="180.0" text="道路设计时速：" />
+                        <Text fx:id="rsText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <ImageView fx:id="road_image" fitHeight="350.0" fitWidth="191.0" layoutX="178.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
    </children>
 </Pane>

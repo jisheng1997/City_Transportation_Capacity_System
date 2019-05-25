@@ -28,11 +28,6 @@
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="adminBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="管理员入口">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
-               </VBox.margin>
-            </Button>
             <Button fx:id="exitBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="退出">
                <VBox.margin>
                   <Insets bottom="20.0" left="19.0" right="19.0" top="20.0" />
@@ -47,10 +42,10 @@
          <children>
             <TextField fx:id="usernameTF" layoutX="151.0" layoutY="51.0" prefHeight="36.0" prefWidth="232.0" promptText="输入您的用户名" />
             <Label layoutX="55.0" layoutY="57.0" text="用户名：" />
-            <Label layoutX="75.0" layoutY="137.0" text="密码：" />
+            <Label layoutX="64.0" layoutY="137.0" text="密码：" />
+            <Label layoutX="46.0" layoutY="218.0" text="确认密码：" />
             <Button fx:id="confirmBtn" layoutX="171.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleRegisterButtonAction" text="注册" />
             <Button fx:id="cancelBtn" layoutX="304.0" layoutY="277.0" mnemonicParsing="false" text="取消" />
-            <Label layoutX="39.0" layoutY="218.0" text="确认密码：" />
             <Label fx:id="unReminderLabel" disable="true" layoutX="395.0" layoutY="57.0" prefHeight="24.0" prefWidth="169.0" text="Label" textFill="RED" />
             <Label fx:id="pwReminderLabel" disable="true" layoutX="395.0" layoutY="137.0" prefHeight="24.0" prefWidth="169.0" text="Label" textFill="RED" />
             <Label fx:id="confpwReminderLabel" disable="true" layoutX="395.0" layoutY="218.0" prefHeight="24.0" prefWidth="169.0" text="Label" textFill="RED" />

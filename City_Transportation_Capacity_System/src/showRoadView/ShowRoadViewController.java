@@ -1,6 +1,8 @@
 package showRoadView;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -16,6 +18,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -55,6 +59,8 @@ public class ShowRoadViewController implements Initializable{
 	private Text riText;
 	@FXML
 	private Text rbText;
+	@FXML
+	private ImageView road_image;
 	
 	public void setRoadDetail(Road road) {
 		GetInfo.setCurrentRoad(road);
@@ -68,6 +74,17 @@ public class ShowRoadViewController implements Initializable{
 			riText.setText("·ñ");
 		}
 		rbText.setText(""+road.getRoad_capacity()+"");
+		System.out.println("../pic/" + road.getRoad_name() + ".png");
+//		File file = new File("../pic/´ó»ªÂ·.png");
+//	    String localUrl = null;
+//		try {
+//			localUrl = file.toURI().toURL().toString();
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
+		final Image image2 = new Image(ShowRoadViewController.class.getResourceAsStream("../pic/" + road.getRoad_name() + ".png"));
+		road_image.setImage(image2);
+	
 	}
 	
 	public void lastView(MouseEvent event) {

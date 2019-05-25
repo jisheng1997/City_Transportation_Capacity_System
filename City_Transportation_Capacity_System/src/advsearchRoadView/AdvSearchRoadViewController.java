@@ -45,9 +45,11 @@ public class AdvSearchRoadViewController implements Initializable{
 	@FXML
 	private Button searchViewBtn;
 	@FXML
-	private Button advSearchViewBtn;
+	private Button advSearchBtn;
 	@FXML
-	private Button btn2;
+	private Button analysisRoadBtn;
+	@FXML
+	private Button analysisCrossingBtn;
 	@FXML
 	private Button exitBtn;
 	@FXML
@@ -71,6 +73,20 @@ public class AdvSearchRoadViewController implements Initializable{
 		try {
 			Parent parent = fxmlLoader.load();
 			Scene scene = new Scene(parent);
+			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			currentStage.setScene(scene);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	public void handleAnalysisRoadViewBtn(MouseEvent event) {
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		fxmlLoader.setLocation(getClass().getResource("../analysisView/analysisRoadView.fxml"));
+		try {
+			Parent parent = fxmlLoader.load();
+			Scene scene = new Scene(parent);
+			
 			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			currentStage.setScene(scene);
 		} catch (IOException e1) {

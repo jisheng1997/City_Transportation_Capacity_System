@@ -46,7 +46,7 @@ public class SearchRoadViewController implements Initializable {
 	@FXML
 	private Button advSearchBtn;
 	@FXML
-	private Button btn2;
+	private Button analysisRoadBtn;
 	@FXML
 	private Button exitBtn;
 	@FXML

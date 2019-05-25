@@ -23,6 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.DBProcessor;
+import main.GetInfo;
 import main.User;
 
 public class RegisterViewController implements Initializable {
@@ -106,13 +107,13 @@ public class RegisterViewController implements Initializable {
 		
 		if (confirmpasswd.length() == 0) {
 			confpwReminderLabel.setText("确认密码不能为空！");
+			confpwReminderLabel.setVisible(true);
 			isPasswordPaired = false;
-			if(!(passwd == confirmpasswd)) {
+		}else if(passwd == confirmpasswd) {
 				confpwReminderLabel.setText("两次密码不一致！");
 				confpwReminderLabel.setVisible(true);
 				isPasswordPaired = false;
-				}
-		}else {
+		}else{
 			confpwReminderLabel.setVisible(false);
 			isPasswordPaired = true;
 		}
@@ -125,9 +126,7 @@ public class RegisterViewController implements Initializable {
 				alert.show();
 			}
 		}
-		System.out.println(isRegisterNameValid);
-		System.out.println(isPasswordPaired);
-		System.out.println(isRegisterPasswdValid);
+		System.out.println(passwd+confirmpasswd);
 		if (!isExist) {
 			if (isRegisterNameValid && isPasswordPaired && isRegisterPasswdValid) {
 				User newUser = new User(username, passwd,false);
@@ -137,6 +136,7 @@ public class RegisterViewController implements Initializable {
 				alert.setHeaderText("Information");
 				alert.show();
 				this.users = dbProcessor.fetchUserInfo();
+				GetInfo.setCurrentUser(newUser);
 				FXMLLoader fxmlLoader = new FXMLLoader();
 				fxmlLoader.setLocation(getClass().getResource("../searchRoadView/searchRoadView.fxml"));
 				try {
